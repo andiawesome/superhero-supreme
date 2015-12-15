@@ -1,8 +1,7 @@
 /** @ngdoc  controller
  *  @name   superheroSupreme.controller:ListCtrl
  *  @description
- *  Manages displaying the superhero list, & setting up the sortability
- *  functionality
+ *  Manages displaying the superhero list, & setting up the sort params
  *  @author Andi Norris
  */
 (function () {

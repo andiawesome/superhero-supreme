@@ -1,22 +1,25 @@
 /** @ngdoc  controller
- *  @name   mainCtrl
- *  @description    Handles the main view of the Volunteer Manage Requests page
+ *  @name   superheroSupreme.controller:MainCtrl
+ *  @description
+ *  # MainCtrl
+ *  Handles the main view of the Superhero List page
  *  @author Andi Norris
  */
 (function () {
     'use strict';
 
-    angular.module('volunteerManager')
-    .controller('manageReqsCtrl', manageReqsCtrl);
+    angular.module('superheroSupreme')
+    .controller('MainCtrl', MainCtrl);
 
-    manageReqsCtrl.$inject = ['$scope', '$log', 'listManager'];
+    MainCtrl.$inject = ['$scope', '$log', 'listManager'];
 
-    function manageReqsCtrl ($scope, $log, listManager) {
+    function MainCtrl ($scope, $log, listManager) {
         activate();
 
         /////////////////////
+
         function activate () {
-            listManager.loadReqList();
+            listManager.loadList();
         }
     }
 })();
