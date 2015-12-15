@@ -16,9 +16,9 @@
 
         ctrl.statuses = [
             { title: 'All', value: 'all' },
-            { title: 'Pending', value: 'pending' },
-            { title: 'Approved', value: 'approved' },
-            { title: 'Rejected', value: 'rejected' }
+            { title: 'Active', value: 'active' },
+            { title: 'Retired', value: 'retired' },
+            { title: 'Out of Commission', value: 'expired' }
         ];
 
         ctrl.filter_params = {
