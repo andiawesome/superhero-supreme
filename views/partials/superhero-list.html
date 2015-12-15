@@ -1,0 +1,61 @@
+<div class="clearfix ss-content-inner">
+    <div class="ss-sortable-list">
+        <div sortable-list
+             sort-by="list.sortableList.sortBy"
+             sort-class="list.sortableList.sortClass"
+             class="ss-sortable-list-header {{ list.sortableList.sortClass }}">
+
+            <div class="col col-xs-2">
+                <div
+                    sortable-header
+                    attr="name">Name</div>
+            </div>
+
+            <div class="col col-xs-2">
+                <div
+                    sortable-header
+                    attr="association.name">Association</div>
+            </div>
+
+            <div class="col col-xs-2">
+                <div
+                    sortable-header
+                    attr="start_date">Start Date</div>
+            </div>
+
+            <div class="col col-xs-1">
+              <div
+                    sortable-header
+                    attr="hours">Hours</div>
+            </div>
+
+            <div class="col col-xs-2">
+                <div
+                    sortable-header
+                    attr="status">Status</div>
+            </div>
+
+            <div class="col col-xs-1"></div>
+        </div>
+
+        <div ng-show="list.heroList.length == 0" class="no-results alert alert-info">Your search did not return any results.</div>
+
+        <div
+            class="ss-sortable-list-item"
+            ng-repeat="item in list.heroList">
+
+            <div class="col col-xs-2" title="{{ item.name }}">{{ item.name }}</div>
+
+            <div data-ng-if="item.association.uuid != null" class="col col-xs-2" title="{{ item.association.name }}"><a ng-href="/association/{{ item.association.uuid }}">{{ item.association.name }}</a></div>
+            <div data-ng-if="item.association.uuid == null" class="col col-xs-2" title="{{ item.association.name }}">{{ item.association.name }}</div>
+
+            <div class="col col-xs-2">{{ item.start_date | ssDate:'MM/DD/YYYY' }}<span ng-show="!!item.end_date"> - {{ item.end_date | ssDate:'MM/DD/YYYY' }}</span></div>
+
+            <div class="col col-xs-1">{{ item.hours }}</div>
+
+            <div class="col col-xs-2" title="{{ item.status }}">{{ item.status }}</div>
+
+            <div class="col col-xs-1"><a ng-href="/superhero-profile/{{ item.uuid }}">View</a></div>
+        </div>
+    </div>
+</div>

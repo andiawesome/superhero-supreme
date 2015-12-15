@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="superheroSupreme">
+<head>
+  <title ng-bind="title">Superhero Supreme</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
+
+  <!-- styles -->
+  <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+  <link rel="stylesheet" href="/styles/ssStyles.css" />
+</head>
+
+<body>
+  <div class="container" ng-controller="MainCtrl as main">
+    <div class="header-page">
+        <h1 class="header-alpha">Manage All the Superheroes</h1>
+    </div>
+
+    <ng-include src="'partials/superhero-filter-form.html'" ng-controller='FormCtrl as form'></ng-include>
+
+    <ng-include src="'partials/superhero-list.html'" ng-controller="ListCtrl as list"></ng-include>
+  </div>
+
+<!-- buildjs:vendor -->
+<!-- bower:js -->
+<script src="/bower_components/jquery/dist/jquery.js"></script>
+<script src="/bower_components/angular/angular.js"></script>
+<script src="/bower_components/angular-resource/angular-resource.js"></script>
+<script src="/bower_components/moment/moment.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- buildjs:app -->
+<!-- inject:js -->
+<script src="/scripts/app.js"></script>
+<script src="/scripts/controllers/main.controller.js"></script>
+<script src="/scripts/controllers/list.controller.js"></script>
+<script src="/scripts/controllers/form.controller.js"></script>
+<script src="/scripts/directives/ssSortableHeader.directive.js"></script>
+<script src="/scripts/directives/ssSortableList.directive.js"></script>
+<script src="/scripts/filters/ssDate.filter.js"></script>
+<script src="/scripts/services/dateTimeUtils.factory.js"></script>
+<script src="/scripts/services/listManager.factory.js"></script>
+<script src="/scripts/services/superheroApi.factory.js"></script>
+<script src="/scripts/services/tableList.factory.js"></script>
+<!-- endinject -->
+<!-- endbuild -->
+
+</body>
+</html>

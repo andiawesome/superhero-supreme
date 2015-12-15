@@ -1,0 +1,71 @@
+<div class="clearfix">
+  <form action="" id="superhero-form" class="well">
+      <div class="form-inline">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                ng-model="form.filter_params.name"
+                name="name"
+                id="ss-name" />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="status">Status</label>
+              <div class="ss-select" tabindex="0">
+                  <select class="form-control" ng-model='form.filter_params.status' ng-options='status.title for status in form.statuses'></select>
+                  <b class="caret"></b>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="input-group">
+                  <label for="start_date">Start Date</label>
+                  <div class="input-group">
+                      <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                      <input
+                        id="vm-date-start"
+                        type="text"
+                        name="start_date"
+                        class="form-control"
+                        uib-datepicker-popup="shortDate"
+                        is-open="form.start_picker_open"
+                        ng-click="form.openStartPicker($event)"
+                        current-text="{{ form.picker_config.current_text }}"
+                        ng-model="form.filter_params.start_date" />
+                  </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="input-group">
+                <label for="end_date">End Date</label>
+                <div class="input-group">
+                    <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                    <input
+                        id="vm-date-end"
+                        type="text"
+                        name="end_date"
+                        class="form-control"
+                        uib-datepicker-popup="shortDate"
+                        is-open="form.end_picker_open"
+                        ng-click="form.openEndPicker($event)"
+                        current-text="{{ form.picker_config.current_text }}"
+                        min="form.filter_params.start_date"
+                        ng-model="form.filter_params.end_date" />
+                </div>
+              </div>
+          </div>
+
+          <div class="form-group action-buttons">
+            <a href="#" class="ss-action-link reset" ng-click="form.reset()" eat-click>Reset Filters</a>
+            <button
+              type="button"
+              class="btn btn-lg"
+              button-state="form.filtering"
+              ng-disabled="form.filtering"
+              ng-click='form.filterRequests()'>Filter</button>
+          </div>
+      </div>
+  </form>
+</div> <!-- /FormCtrl -->
