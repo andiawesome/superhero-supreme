@@ -13,7 +13,7 @@
 
     function ssSortableHeader () {
         var directive = {
-            require: '^sortableList',
+            require: '^ssSortableList',
             link: postLink,
             scope: {
                 attr: '@'
